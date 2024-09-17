@@ -1,0 +1,269 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+        
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #ffffff;
+            --accent-color: #000000;
+            --text-color: #000000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            text-align: center;
+            z-index: 2;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards 0.5s;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background-color: rgba(255,255,255,0.1);
+            border: 2px solid var(--primary-color);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .contact-info a:nth-child(1) { animation: fadeInUp 0.8s forwards 0.7s; }
+        .contact-info a:nth-child(2) { animation: fadeInUp 0.8s forwards 0.9s; }
+        .contact-info a:nth-child(3) { animation: fadeInUp 0.8s forwards 1.1s; }
+        .contact-info a:nth-child(4) { animation: fadeInUp 0.8s forwards 1.3s; }
+
+        .contact-info a:hover {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .section {
+            margin-bottom: 100px;
+            padding: 40px;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, var(--primary-color) 360deg);
+            opacity: 0.1;
+            animation: rotate 20s linear infinite;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 2em;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .skill {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--text-color);
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            cursor: default;
+            border: 2px solid transparent;
+        }
+
+        .skill:hover {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            transform: translateY(-5px) scale(1.05);
+            border-color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(255, 0, 255, 0.4);
+        }
+
+        .experience {
+            margin-bottom: 50px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .experience::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .experience::after {
+            content: "";
+            position: absolute;
+            left: -4px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .experience h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .experience p {
+            font-style: italic;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .experience ul {
+            list-style-type: none;
+        }
+
+        .experience li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .experience li::before {
+            content: "▹";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            display: block;
+            pointer-events: none;
+            width: 5px;
+            height: 5px;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .section {
+                padding: 30px;
+            }
+            .skill {
+                padding: 10px 20px;
+            }
+        }
+    
